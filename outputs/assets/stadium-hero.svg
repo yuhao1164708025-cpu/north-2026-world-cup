@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 920" role="img" aria-label="Night football stadium hero">
+  <defs>
+    <radialGradient id="skyGlow" cx="64%" cy="38%" r="52%">
+      <stop offset="0" stop-color="#314236" stop-opacity=".85"/>
+      <stop offset=".45" stop-color="#121b17" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#040806"/>
+    </radialGradient>
+    <linearGradient id="pitch" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1e4a33"/>
+      <stop offset=".55" stop-color="#143021"/>
+      <stop offset="1" stop-color="#07120d"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="1920" height="920" fill="url(#skyGlow)"/>
+  <path d="M0 438 C360 326 650 304 960 316 C1270 304 1580 326 1920 438 L1920 616 C1540 502 1260 480 960 482 C660 480 380 502 0 616Z" fill="#0b1110"/>
+  <path d="M0 462 C366 372 640 350 960 358 C1280 350 1554 372 1920 462" fill="none" stroke="#2e3b34" stroke-width="32" opacity=".7"/>
+  <path d="M0 518 C360 440 650 418 960 424 C1270 418 1580 440 1920 518" fill="none" stroke="#51604f" stroke-width="5" opacity=".42"/>
+  <g opacity=".8">
+    <circle cx="276" cy="190" r="9" fill="#f5fff0"/>
+    <circle cx="398" cy="236" r="7" fill="#f5fff0"/>
+    <circle cx="520" cy="270" r="5" fill="#c9ff4a"/>
+    <circle cx="1414" cy="206" r="9" fill="#f5fff0"/>
+    <circle cx="1542" cy="246" r="7" fill="#f5fff0"/>
+    <circle cx="1666" cy="286" r="5" fill="#c9ff4a"/>
+  </g>
+  <g filter="url(#blur)" opacity=".75">
+    <ellipse cx="315" cy="214" rx="150" ry="35" fill="#f7fff1"/>
+    <ellipse cx="1510" cy="225" rx="170" ry="38" fill="#f7fff1"/>
+  </g>
+  <path d="M0 566 C420 488 650 498 960 500 C1270 498 1500 488 1920 566 L1920 920 L0 920Z" fill="url(#pitch)"/>
+  <path d="M960 502 L960 920" stroke="#d8e5d0" stroke-width="4" opacity=".52"/>
+  <ellipse cx="960" cy="548" rx="240" ry="38" fill="none" stroke="#d8e5d0" stroke-width="3" opacity=".44"/>
+  <path d="M0 618 C360 548 650 544 960 550 C1270 544 1580 548 1920 618" fill="none" stroke="#e7f1dc" stroke-width="2" opacity=".24"/>
+  <circle cx="960" cy="722" r="44" fill="#111a15" stroke="#8a9588" stroke-width="2" opacity=".9"/>
+  <path d="M930 710 Q960 684 990 710 M924 733 Q960 760 996 733 M960 680 L960 764" fill="none" stroke="#98a395" stroke-width="2" opacity=".45"/>
+  <g opacity=".42">
+    <rect x="118" y="492" width="164" height="64" fill="none" stroke="#dbe5d2" stroke-width="3"/>
+    <rect x="1638" y="492" width="164" height="64" fill="none" stroke="#dbe5d2" stroke-width="3"/>
+  </g>
+</svg>
