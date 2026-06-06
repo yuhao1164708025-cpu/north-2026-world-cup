@@ -1,0 +1,63 @@
+{
+  "source": "football-data.org-compatible snapshot",
+  "updatedAt": "2026-06-06T02:00:00.000Z",
+  "stale": true,
+  "message": "Awaiting FOOTBALL_DATA_TOKEN; using the bundled editorial snapshot.",
+  "matches": [
+    {
+      "id": "mex-rsa",
+      "utcDate": "2026-06-11T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stageLabel": "A组",
+      "group": "A组",
+      "homeTeam": { "name": "墨西哥", "tla": "MEX" },
+      "awayTeam": { "name": "南非", "tla": "RSA" },
+      "score": { "fullTime": { "home": null, "away": null } },
+      "venue": "墨西哥城 · 阿兹特克体育场"
+    },
+    {
+      "id": "kor-cze",
+      "utcDate": "2026-06-12T02:00:00.000Z",
+      "status": "SCHEDULED",
+      "stageLabel": "A组",
+      "group": "A组",
+      "homeTeam": { "name": "韩国", "tla": "KOR" },
+      "awayTeam": { "name": "捷克", "tla": "CZE" },
+      "score": { "fullTime": { "home": null, "away": null } },
+      "venue": "瓜达拉哈拉 · 阿克伦体育场"
+    },
+    {
+      "id": "can-bih",
+      "utcDate": "2026-06-12T19:00:00.000Z",
+      "status": "SCHEDULED",
+      "stageLabel": "B组",
+      "group": "B组",
+      "homeTeam": { "name": "加拿大", "tla": "CAN" },
+      "awayTeam": { "name": "波黑", "tla": "BIH" },
+      "score": { "fullTime": { "home": null, "away": null } },
+      "venue": "多伦多 · BMO球场"
+    },
+    {
+      "id": "usa-par",
+      "utcDate": "2026-06-13T01:00:00.000Z",
+      "status": "SCHEDULED",
+      "stageLabel": "D组",
+      "group": "D组",
+      "homeTeam": { "name": "美国", "tla": "USA" },
+      "awayTeam": { "name": "巴拉圭", "tla": "PAR" },
+      "score": { "fullTime": { "home": null, "away": null } },
+      "venue": "洛杉矶 · SoFi体育场"
+    },
+    {
+      "id": "bra-mar",
+      "utcDate": "2026-06-13T22:00:00.000Z",
+      "status": "SCHEDULED",
+      "stageLabel": "C组",
+      "group": "C组",
+      "homeTeam": { "name": "巴西", "tla": "BRA" },
+      "awayTeam": { "name": "摩洛哥", "tla": "MAR" },
+      "score": { "fullTime": { "home": null, "away": null } },
+      "venue": "纽约新泽西 · 大都会人寿体育场"
+    }
+  ]
+}

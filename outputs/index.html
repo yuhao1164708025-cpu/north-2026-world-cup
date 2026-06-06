@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="北境杯局 - 2026 美加墨世界杯赛程、球队对比、赔率追踪与 AI 赛前赛后分析。">
+  <title>北境杯局 · 2026 世界杯预测站</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="北境杯局首页">
+      <span class="brand-mark">N26</span>
+      <span><strong>北境杯局</strong><small>WORLD CUP INTELLIGENCE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <button class="nav-link active" data-target="top">今日</button>
+      <button class="nav-link" data-target="schedule">赛程</button>
+      <button class="nav-link" data-target="compare">对比</button>
+      <button class="nav-link" data-target="prediction">预测</button>
+      <button class="nav-link" data-target="review">复盘</button>
+    </nav>
+    <div class="top-actions">
+      <span class="live-chip"><i></i> 赛程已核对</span>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题">◐</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span>2026 NORTH AMERICA</span><b>距离揭幕战</b></div>
+        <div class="countdown" id="countdown" aria-label="揭幕战倒计时"></div>
+        <h1><span>看懂比赛</span><br><em>不只猜中比分</em></h1>
+        <p class="hero-copy">实时聚合官方赛程、球队状态与多平台赔率，用可解释的数据模型拆解每一场关键对决。</p>
+        <div class="hero-actions">
+          <button class="primary-btn" data-scroll="prediction">查看今日预测 <span>↗</span></button>
+          <button class="ghost-btn" data-scroll="schedule">浏览完整赛程</button>
+        </div>
+      </div>
+      <article class="next-match glass-card">
+        <div class="match-card-head">
+          <span><i class="pulse"></i> 揭幕战 · A组</span>
+          <time>06月12日 03:00</time>
+        </div>
+        <div class="match-up">
+          <div class="team">
+            <span class="flag">🇲🇽</span>
+            <strong>墨西哥</strong>
+            <small>世界排名 16</small>
+          </div>
+          <div class="versus">
+            <b>VS</b>
+            <span>阿兹特克体育场</span>
+          </div>
+          <div class="team">
+            <span class="flag">🇿🇦</span>
+            <strong>南非</strong>
+            <small>世界排名 59</small>
+          </div>
+        </div>
+        <div class="probability">
+          <div class="prob-row"><span>模型胜率</span><span><b>62%</b> / 23% / 15%</span></div>
+          <div class="prob-bar"><i style="width:62%"></i><i style="width:23%"></i><i style="width:15%"></i></div>
+          <div class="prob-labels"><span>墨西哥胜</span><span>平局</span><span>南非胜</span></div>
+        </div>
+        <button class="card-link" data-scroll="prediction">查看完整分析 <span>→</span></button>
+      </article>
+    </section>
+
+    <section class="ticker" aria-label="赛事快讯">
+      <div class="ticker-label">MATCH WIRE</div>
+      <div class="ticker-track">
+        <span>官方赛程：揭幕战将于北京时间 6 月 12 日 03:00 开球</span>
+        <i></i><span>模型观察：东道主墨西哥的高原主场是关键变量</span>
+        <i></i><span>赔率提醒：临场阵容公布后，盘口可能快速波动</span>
+      </div>
+    </section>
+
+    <section class="section schedule-section" id="schedule">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">MATCH CENTRE</span>
+          <h2>最新赛程</h2>
+          <p>首轮焦点场次 · 时间已换算为北京时间</p>
+        </div>
+        <div class="segmented" id="scheduleFilters">
+          <button class="active" data-filter="all">全部</button>
+          <button data-filter="today">即将开赛</button>
+          <button data-filter="featured">焦点</button>
+        </div>
+      </div>
+      <div class="schedule-grid" id="scheduleGrid"></div>
+      <div class="source-line">
+        <span>赛程来源：<a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noreferrer">FIFA 官方赛事中心 ↗</a> · <a href="https://www.football-data.org/" target="_blank" rel="noreferrer">Data provided by football-data.org ↗</a></span>
+        <span id="dataStatus">正在读取赛事快照</span>
+      </div>
+    </section>
+
+    <section class="section compare-section" id="compare">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">HEAD TO HEAD</span>
+          <h2>球队对比实验室</h2>
+          <p>选择两支球队，拆开看实力与风格</p>
+        </div>
+        <span class="model-tag">数据样本截至 2026.06</span>
+      </div>
+      <div class="compare-panel">
+        <div class="compare-selectors">
+          <label>主队<select id="teamA"></select></label>
+          <button id="swapTeams" class="swap-btn" aria-label="交换球队">⇄</button>
+          <label>客队<select id="teamB"></select></label>
+        </div>
+        <div class="compare-stage">
+          <div class="team-profile" id="profileA"></div>
+          <div class="metrics" id="metrics"></div>
+          <div class="team-profile right" id="profileB"></div>
+        </div>
+        <div class="insight-strip" id="compareInsight"></div>
+      </div>
+    </section>
+
+    <section class="section prediction-section" id="prediction">
+      <div class="section-heading light">
+        <div>
+          <span class="kicker">PREDICTION DESK</span>
+          <h2>赛前预测中心</h2>
+          <p>赔率只是一种市场观点，模型负责解释差异</p>
+        </div>
+        <select id="predictionMatch" class="match-select" aria-label="选择预测比赛"></select>
+      </div>
+      <div class="prediction-layout">
+        <article class="analysis-card">
+          <div class="analysis-title">
+            <span class="analysis-icon">◎</span>
+            <div><small>MODEL VERDICT</small><h3 id="verdictTitle">看好墨西哥保持不败</h3></div>
+            <span class="confidence" id="confidence">信心 7.8</span>
+          </div>
+          <p id="verdictText"></p>
+          <div class="score-pick">
+            <span>预测比分</span><strong id="scorePick">2 <i>:</i> 0</strong><small id="scoreNote">墨西哥小胜概率最高</small>
+          </div>
+          <div class="factor-list" id="factorList"></div>
+        </article>
+
+        <article class="odds-card">
+          <div class="card-heading">
+            <div><small>MARKET WATCH</small><h3>主流赔率对比</h3></div>
+            <button class="refresh-btn" id="refreshOdds">↻ 刷新</button>
+          </div>
+          <div class="odds-head"><span>来源</span><span>主胜</span><span>平</span><span>客胜</span></div>
+          <div id="oddsRows"></div>
+          <div class="best-odds" id="bestOdds"></div>
+          <p class="odds-disclaimer">赔率数值为 2026-06-06 产品演示快照，并非实时盘口，仅用于信息架构展示，不构成投注建议。实际赔率请以来源平台为准。</p>
+        </article>
+
+        <article class="copy-card content-studio" id="preStudio">
+          <div class="card-heading">
+            <div><small>CONTENT STUDIO</small><h3 id="preStudioTitle">自媒体文案</h3></div>
+            <div class="content-mode" id="preMode">
+              <button class="active" data-mode="social">社媒文案</button>
+              <button data-mode="deep">深度解读</button>
+            </div>
+            <div class="tone-switch" id="preTone">
+              <button class="active" data-tone="pro">专业</button>
+              <button data-tone="hot">热血</button>
+              <button data-tone="short">短讯</button>
+            </div>
+          </div>
+          <div class="copy-output" id="preCopy"></div>
+          <div class="deep-output" id="preDeep" hidden></div>
+          <div class="copy-footer">
+            <span id="preCount">0 字</span>
+            <button class="copy-btn" id="preCopyButton" data-copy="preCopy">复制文案</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section review-section" id="review">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">POST-MATCH REVIEW</span>
+          <h2>赛后深度复盘</h2>
+          <p>2026 正赛尚未开始，以下使用历史经典比赛演示完整复盘能力</p>
+        </div>
+        <span class="demo-tag">历史数据演示</span>
+      </div>
+      <div class="review-scoreboard">
+        <div class="review-team"><span>🇦🇷</span><strong>阿根廷</strong><small>4-3 点球</small></div>
+        <div class="final-score"><small>2022 决赛 · 已结束</small><strong>3 <i>:</i> 3</strong><span>加时赛</span></div>
+        <div class="review-team"><span>🇫🇷</span><strong>法国</strong><small>全场追平</small></div>
+      </div>
+      <div class="review-grid">
+        <article class="timeline-card">
+          <div class="card-heading"><div><small>MOMENTUM</small><h3>比赛走势</h3></div><span class="neutral-chip">客观复盘</span></div>
+          <div class="momentum-chart">
+            <div class="chart-axis"><span>开场</span><span>半场</span><span>90'</span><span>加时</span></div>
+            <svg viewBox="0 0 700 180" role="img" aria-label="比赛动能走势图">
+              <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9ff4a" stop-opacity=".35"/><stop offset="1" stop-color="#c9ff4a" stop-opacity="0"/></linearGradient></defs>
+              <path class="grid-line" d="M0 45H700 M0 90H700 M0 135H700"/>
+              <path class="area" d="M0 102 C60 92 95 40 160 48 S270 60 325 72 S390 145 448 130 S510 40 560 74 S630 95 700 66 V180 H0Z"/>
+              <path class="trend" d="M0 102 C60 92 95 40 160 48 S270 60 325 72 S390 145 448 130 S510 40 560 74 S630 95 700 66"/>
+              <g class="chart-dot"><circle cx="126" cy="52" r="5"/><circle cx="425" cy="132" r="5"/><circle cx="550" cy="70" r="5"/></g>
+            </svg>
+          </div>
+          <div class="review-stats">
+            <div><span>控球率</span><b>54%</b><i><u style="width:54%"></u></i><b>46%</b></div>
+            <div><span>预期进球</span><b>2.95</b><i><u style="width:64%"></u></i><b>2.20</b></div>
+            <div><span>射正</span><b>10</b><i><u style="width:50%"></u></i><b>5</b></div>
+          </div>
+        </article>
+        <article class="review-analysis">
+          <div class="card-heading"><div><small>THE REVIEW</small><h3>90 分钟之外</h3></div></div>
+          <div class="review-points">
+            <div><b>01</b><p><strong>阿根廷的主动性兑现得更早</strong>中场压迫和肋部推进让法国在前 70 分钟很难连续出球，2:0 并非偶然。</p></div>
+            <div><b>02</b><p><strong>换人改变了比赛的速度</strong>法国通过增加冲击型球员压缩组织环节，姆巴佩的连续进球将比赛拖回均势。</p></div>
+            <div><b>03</b><p><strong>结果与过程都值得尊重</strong>阿根廷整体表现更完整，法国则展现顶级韧性。点球胜负不能抹去双方贡献。</p></div>
+          </div>
+        </article>
+        <article class="copy-card review-copy content-studio" id="postStudio">
+          <div class="card-heading">
+            <div><small>CONTENT STUDIO</small><h3 id="postStudioTitle">赛后发布文案</h3></div>
+            <div class="content-mode" id="postMode">
+              <button class="active" data-mode="social">社媒文案</button>
+              <button data-mode="deep">深度解读</button>
+            </div>
+            <div class="tone-switch" id="postTone">
+              <button class="active" data-tone="pro">专业</button>
+              <button data-tone="hot">情绪</button>
+            </div>
+          </div>
+          <div class="copy-output" id="postCopy"></div>
+          <div class="deep-output" id="postDeep" hidden></div>
+          <div class="copy-footer"><span id="postCount">0 字</span><button class="copy-btn" id="postCopyButton" data-copy="postCopy">复制文案</button></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">N26</span><span><strong>北境杯局</strong><small>用数据理解足球</small></span></div>
+    <p>预测基于公开数据与概率模型，不代表确定赛果。Data provided by football-data.org。请理性看球，远离非法博彩。</p>
+    <div><a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noreferrer">官方赛程</a><a href="#prediction">模型说明</a><span>© 2026 N26 LAB</span></div>
+  </footer>
+  <div class="toast" id="toast">已复制到剪贴板</div>
+  <script src="./app.js"></script>
+</body>
+</html>
